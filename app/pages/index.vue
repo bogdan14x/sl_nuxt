@@ -1,114 +1,126 @@
 <template>
-  <div class="min-h-full text-[#f9f9f9]">
-    <header class="flex flex-wrap items-center justify-between gap-4 border-b border-[#23232b] pb-5">
+  <div class="min-h-full bg-[#0b1017] text-[#edf2f7]">
+    <header class="flex flex-wrap items-center justify-between gap-4 border-b border-white/8 pb-6">
       <NuxtLink
         to="/"
-        class="inline-flex items-center gap-3 text-sm font-semibold tracking-[0.12em] text-[#f9f9f9] transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#594ddf]">
-        <span class="inline-flex rounded-full border border-[#23232b] bg-[#14151a] px-2.5 py-2">
-          <img src="/soundlogo_only.svg" alt="Soundlog" class="h-6 w-auto" />
+        class="inline-flex items-center gap-3 text-sm font-medium tracking-[-0.02em] text-[#edf2f7] transition hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-[#594ddf]">
+        <span class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 bg-white/[0.03]">
+          <img src="/soundlogo_only.svg" alt="Soundlog" class="h-5 w-auto" />
         </span>
-        <span>SOUNDLOG</span>
+        <span class="text-[1.15rem]">Soundlog</span>
       </NuxtLink>
 
-      <nav class="flex flex-wrap items-center gap-3 sm:gap-4">
+      <nav class="flex flex-wrap items-center gap-5 text-sm text-[#c4cad4]">
         <NuxtLink
           v-for="link in navLinks"
           :key="link.label"
           :to="link.to"
-          class="text-sm text-[#808080] transition hover:text-[#f9f9f9] focus:outline-none focus:ring-2 focus:ring-[#594ddf]">
+          class="transition hover:text-white focus:outline-none focus:ring-2 focus:ring-[#594ddf]">
           {{ link.label }}
-        </NuxtLink>
-        <NuxtLink
-          to="/register"
-          class="inline-flex items-center justify-center border border-[#594ddf] bg-[#594ddf] px-4 py-2 text-sm font-semibold text-white transition hover:border-[#6a5ff0] hover:bg-[#6a5ff0] focus:outline-none focus:ring-2 focus:ring-[#8f87ff]">
-          Get started
         </NuxtLink>
       </nav>
     </header>
 
-    <main class="space-y-6 pt-6 lg:space-y-8">
-      <section class="grid items-stretch gap-6 xl:grid-cols-[minmax(0,1.08fr)_minmax(0,0.92fr)]">
-        <div class="flex h-full min-w-0 flex-col border border-[#23232b] bg-[#121319] px-5 py-6 sm:px-6 sm:py-7 lg:px-8 lg:py-8">
-          <p class="text-xs font-semibold uppercase tracking-[0.22em] text-[#8f87ff]">For independent artists</p>
-          <h1 class="mt-4 max-w-3xl text-[clamp(2.4rem,5.8vw,5.1rem)] font-semibold leading-[0.96] tracking-[-0.06em] text-[#f9f9f9]">
-            Your personal artist website in one click.
-          </h1>
-          <p class="mt-5 max-w-xl text-[0.98rem] leading-7 text-[#b4b6bd] sm:text-base">
-            Soundlog builds your page from Spotify, keeps releases current, and gives fans one clean place to find your music.
-          </p>
+    <main class="pb-16 pt-8 sm:pb-20 sm:pt-10">
+      <section class="mx-auto max-w-[44rem]">
+        <p class="text-sm font-medium tracking-[-0.02em] text-[#8f87ff]">For independent artists</p>
+        <h1 class="mt-5 max-w-[11ch] text-[clamp(3.5rem,10vw,7.75rem)] font-semibold leading-[0.9] tracking-[-0.08em] text-[#edf2f7]">
+          Your personal artist website in one click.
+        </h1>
+        <p class="mt-6 max-w-[32rem] text-[clamp(1.1rem,2.1vw,1.75rem)] leading-[1.28] tracking-[-0.03em] text-[#6f7786]">
+          Soundlog builds your page from Spotify, keeps it up to date, and gives fans one place to find your music.
+        </p>
 
-          <div class="mt-7 flex flex-wrap items-center gap-3">
-            <NuxtLink
-              to="/register"
-              class="inline-flex items-center justify-center border border-[#594ddf] bg-[#594ddf] px-5 py-3 text-sm font-semibold text-white transition hover:border-[#6a5ff0] hover:bg-[#6a5ff0] focus:outline-none focus:ring-2 focus:ring-[#8f87ff]">
-              Start free trial
-            </NuxtLink>
-            <NuxtLink
-              to="/login"
-              class="inline-flex items-center justify-center border border-[#2c2e37] bg-[#111218] px-5 py-3 text-sm font-semibold text-[#f9f9f9] transition hover:border-[#3a3d49] hover:bg-[#171922] focus:outline-none focus:ring-2 focus:ring-[#8f87ff]">
-              Sign in
-            </NuxtLink>
-          </div>
-
-          <div class="mt-4 flex flex-wrap gap-x-5 gap-y-2 text-sm text-[#8d9198]">
-            <span>Free 14-day trial</span>
-            <span>No credit card required</span>
-            <span>Spotify-powered setup</span>
-          </div>
-
-          <div class="mt-10 grid flex-1 content-start gap-3">
-            <article
-              v-for="item in heroFacts"
-              :key="item.title"
-              class="border border-[#23232b] bg-[#0f1014] p-4 transition hover:border-[#313340]">
-              <p class="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#808080]">{{ item.title }}</p>
-              <p class="mt-3 text-sm leading-6 text-[#e6e7eb]">{{ item.text }}</p>
-            </article>
-          </div>
+        <div class="mt-8 flex flex-wrap items-center gap-4">
+          <NuxtLink
+            to="/register"
+            class="inline-flex min-h-14 items-center justify-center rounded-2xl bg-[#f4f7fb] px-6 text-lg font-semibold tracking-[-0.03em] text-[#0b1017] transition hover:bg-white focus:outline-none focus:ring-2 focus:ring-[#594ddf]">
+            Start your free trial
+          </NuxtLink>
+          <NuxtLink
+            to="/login"
+            class="inline-flex min-h-14 items-center justify-center rounded-2xl border border-white/8 bg-white/[0.04] px-6 text-lg font-medium tracking-[-0.03em] text-[#edf2f7] transition hover:bg-white/[0.08] focus:outline-none focus:ring-2 focus:ring-[#594ddf]">
+            Sign in
+          </NuxtLink>
         </div>
 
-        <div class="min-w-0">
-          <article class="flex h-full min-w-0 flex-col overflow-hidden border border-[#23232b] bg-[#111218]">
-            <div class="border-b border-[#23232b] px-5 py-3 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#808080]">
-              Example artist page
+        <div class="mt-5 flex flex-wrap items-center gap-x-4 gap-y-2 text-sm text-[#98a1af]">
+          <span>Free 14-day trial</span>
+          <span class="hidden h-1 w-1 rounded-full bg-white/20 sm:inline-block"></span>
+          <span>No credit card required</span>
+          <span class="hidden h-1 w-1 rounded-full bg-white/20 sm:inline-block"></span>
+          <span>Built from your Spotify profile</span>
+        </div>
+      </section>
+
+      <section class="pt-16 sm:pt-20">
+        <div class="mx-auto max-w-4xl text-center">
+          <p class="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#8f87ff]">Example artist page</p>
+          <p class="mt-3 text-[clamp(1.8rem,3.6vw,3rem)] font-medium tracking-[-0.04em] text-[#edf2f7]">
+            Auto-updated from Spotify
+          </p>
+          <p class="mt-2 text-lg tracking-[-0.02em] text-[#98a1af]">
+            Streaming links, socials, and your latest release on one page.
+          </p>
+        </div>
+
+        <div class="mx-auto mt-10 max-w-[70rem]">
+          <div class="overflow-hidden rounded-[1.75rem] border border-white/8 bg-[#020406] shadow-[0_20px_70px_rgba(0,0,0,0.36)]">
+            <div class="flex items-center justify-between border-b border-white/8 px-5 py-4">
+              <div class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-white/8"></span>
+                <span class="h-3 w-3 rounded-full bg-white/8"></span>
+                <span class="h-3 w-3 rounded-full bg-white/8"></span>
+              </div>
+              <p class="text-[0.68rem] font-semibold uppercase tracking-[0.18em] text-[#778091]">Artist preview</p>
+              <div class="flex items-center gap-2">
+                <span class="h-5 w-1.5 rounded-full border border-white/25"></span>
+                <span class="h-5 w-1.5 rounded-full border border-white/25"></span>
+              </div>
             </div>
-            <div class="min-w-0 flex flex-1 flex-col overflow-hidden gap-4 p-5 sm:p-6">
-              <div class="aspect-[21/9] w-full max-w-full overflow-hidden border border-[#23232b] bg-[url('/hero_image.jpg')] bg-cover bg-center"></div>
-              <div class="min-w-0 flex-1 space-y-4">
+
+            <div class="bg-[#04070a] px-5 py-6 sm:px-8 sm:py-8">
+              <div class="aspect-[21/9] w-full overflow-hidden rounded-[1.25rem] border border-white/6 bg-[url('/hero_image.jpg')] bg-cover bg-center"></div>
+
+              <div class="mt-7 space-y-6">
                 <div class="min-w-0">
                   <div class="flex flex-wrap items-center gap-3">
-                    <p class="text-xl font-semibold tracking-[-0.04em] text-[#f9f9f9]">Armin van Buuren</p>
-                    <span class="shrink-0 border border-[#2f3140] bg-[#171922] px-2 py-1 text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-[#cfd1ff]">
+                    <p class="text-[clamp(2rem,4vw,3rem)] font-semibold tracking-[-0.06em] text-[#edf2f7]">Armin van Buuren</p>
+                    <span class="inline-flex items-center rounded-full border border-[#594ddf]/40 bg-[#594ddf]/12 px-3 py-1 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#b8b2ff]">
                       Pro
                     </span>
                   </div>
-                    <p class="mt-1 text-sm text-[#8d9198]">armin.soundlog.link</p>
-                  <div class="mt-3 flex max-w-full flex-wrap gap-2">
+                  <p class="mt-2 text-[clamp(1rem,1.6vw,1.35rem)] tracking-[-0.03em] text-[#7f8794]">armin.soundlog.link</p>
+
+                  <div class="mt-4 flex max-w-full flex-wrap gap-2.5">
                     <span
                       v-for="social in socialPlatforms"
                       :key="social.name"
-                      class="inline-flex max-w-full items-center gap-2 border border-[#2a2b33] bg-[#111218] px-3 py-2 text-xs font-medium text-[#d8dae0]">
+                      class="inline-flex max-w-full items-center gap-2.5 rounded-xl border border-white/8 bg-transparent px-3.5 py-2.5 text-sm font-medium text-[#b7bfca]">
                       <img :src="social.icon" alt="" aria-hidden="true" class="h-4 w-4 shrink-0 object-contain" />
                       <span>{{ social.name }}</span>
                     </span>
                   </div>
                 </div>
 
-                <div class="border border-[#23232b] bg-[#15171d] p-4 sm:p-5">
-                  <p class="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#808080]">Latest release</p>
-                  <div class="mt-3 flex items-start gap-3">
-                    <div class="h-16 w-16 shrink-0 border border-[#262730] bg-[#0f1014]"></div>
+                <div class="rounded-[1.25rem] border border-white/10 bg-white/[0.04] p-4 sm:p-5">
+                  <p class="text-[0.72rem] font-semibold uppercase tracking-[0.22em] text-[#8c93a1]">Latest release</p>
+                  <div class="mt-4 flex items-start gap-4">
+                    <div class="h-20 w-20 shrink-0 rounded-lg border border-white/10 bg-[#0c1117]"></div>
                     <div class="min-w-0">
-                      <p class="text-sm font-semibold leading-6 text-[#f9f9f9] [overflow-wrap:anywhere]">Not Even Love (Armin van Buuren Remix)</p>
-                      <p class="mt-1 text-sm text-[#8d9198]">Seven Lions</p>
-                      <p class="mt-1 text-xs uppercase tracking-[0.16em] text-[#6f737d]">Single · 2024</p>
+                      <p class="text-[clamp(1.1rem,2vw,1.75rem)] font-semibold leading-[1.12] tracking-[-0.04em] text-[#edf2f7] [overflow-wrap:anywhere]">
+                        Not Even Love (Armin van Buuren Remix)
+                      </p>
+                      <p class="mt-2 text-[1.05rem] tracking-[-0.03em] text-[#9098a6]">Seven Lions</p>
+                      <p class="mt-1 text-sm uppercase tracking-[0.24em] text-[#68707f]">Single · 2024</p>
                     </div>
                   </div>
-                  <div class="mt-4 flex max-w-full flex-wrap gap-2">
+
+                  <div class="mt-5 flex max-w-full flex-wrap gap-2.5">
                     <span
                       v-for="platform in previewPlatforms"
                       :key="platform.name"
-                      class="inline-flex max-w-full items-center gap-2 border border-[#2a2b33] bg-[#111218] px-3 py-2 text-xs font-medium text-[#d8dae0]">
+                      class="inline-flex max-w-full items-center gap-2.5 rounded-xl border border-[#594ddf]/20 bg-[#0a0d11] px-3.5 py-2.5 text-sm font-medium text-[#e2e8f0]">
                       <img :src="platform.icon" alt="" aria-hidden="true" class="h-4 w-4 shrink-0 object-contain" />
                       <span>{{ platform.name }}</span>
                     </span>
@@ -116,56 +128,52 @@
                 </div>
               </div>
             </div>
-          </article>
+          </div>
         </div>
       </section>
 
-      <section class="grid gap-4 border border-[#23232b] bg-[#121319] p-4 sm:grid-cols-3 sm:p-5">
-        <div
+      <section class="mx-auto mt-14 grid max-w-[70rem] gap-4 sm:grid-cols-3">
+        <article
           v-for="point in valuePoints"
           :key="point.title"
-          class="space-y-2 border-t border-[#23232b] pt-4 first:border-t-0 first:pt-0 sm:border-l sm:border-t-0 sm:pl-4 sm:pt-0 sm:first:border-l-0 sm:first:pl-0">
-          <p class="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#8f87ff]">{{ point.title }}</p>
-          <p class="text-sm leading-6 text-[#b4b6bd]">{{ point.text }}</p>
-        </div>
+          class="rounded-[1.5rem] border border-white/8 bg-white/[0.03] p-5">
+          <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#8f87ff]">{{ point.title }}</p>
+          <p class="mt-3 text-base leading-7 tracking-[-0.02em] text-[#b8c0cc]">{{ point.text }}</p>
+        </article>
       </section>
 
-      <section class="grid gap-4 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-        <article class="border border-[#23232b] bg-[#111218] p-5 sm:p-6">
-          <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#808080]">Why Soundlog</p>
-          <div class="mt-5 space-y-5">
-            <div v-for="benefit in benefits" :key="benefit.title" class="border-t border-[#23232b] pt-5 first:border-t-0 first:pt-0">
+      <section class="mx-auto mt-14 grid max-w-[70rem] gap-4 lg:grid-cols-[minmax(0,0.86fr)_minmax(0,1.14fr)]">
+        <article class="rounded-[1.75rem] border border-white/8 bg-white/[0.03] p-6 sm:p-7">
+          <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#8c93a1]">Why Soundlog</p>
+          <div class="mt-6 space-y-6">
+            <div
+              v-for="benefit in benefits"
+              :key="benefit.title"
+              class="border-t border-white/8 pt-6 first:border-t-0 first:pt-0">
               <div class="flex items-start gap-3">
-                <span class="mt-1 h-2.5 w-2.5 shrink-0 bg-[#594ddf]"></span>
+                <span class="mt-2 h-2.5 w-2.5 shrink-0 rounded-full bg-[#594ddf]"></span>
                 <div>
-                  <h2 class="text-lg font-semibold tracking-[-0.03em] text-[#f9f9f9]">{{ benefit.title }}</h2>
-                  <p class="mt-2 text-sm leading-6 text-[#8d9198]">{{ benefit.text }}</p>
+                  <h2 class="text-xl font-semibold tracking-[-0.04em] text-[#edf2f7]">{{ benefit.title }}</h2>
+                  <p class="mt-2 text-base leading-7 tracking-[-0.02em] text-[#98a1af]">{{ benefit.text }}</p>
                 </div>
               </div>
             </div>
           </div>
         </article>
 
-        <article class="border border-[#23232b] bg-[#14151a] p-5 sm:p-6">
-          <div class="flex items-start justify-between gap-4">
-            <div>
-              <p class="text-xs font-semibold uppercase tracking-[0.2em] text-[#808080]">Built for release cycles</p>
-              <h2 class="mt-3 max-w-lg text-3xl font-semibold tracking-[-0.05em] text-[#f9f9f9] sm:text-4xl">
-                One page fans can trust every time you drop.
-              </h2>
-            </div>
-            <span class="hidden border border-[#2f3140] bg-[#111218] px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-[#cfd1ff] sm:inline-flex">
-              Always current
-            </span>
-          </div>
+        <article class="rounded-[1.75rem] border border-white/8 bg-[#0c1118] p-6 sm:p-7">
+          <p class="text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-[#8c93a1]">Built for release cycles</p>
+          <h2 class="mt-4 max-w-[14ch] text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[0.95] tracking-[-0.06em] text-[#edf2f7]">
+            One page fans can trust every time you release music.
+          </h2>
 
           <div class="mt-8 grid gap-3 sm:grid-cols-2">
             <div
               v-for="promise in promises"
               :key="promise.title"
-              class="border border-[#23232b] bg-[#101114] p-4">
-              <p class="text-sm font-semibold text-[#f9f9f9]">{{ promise.title }}</p>
-              <p class="mt-2 text-sm leading-6 text-[#8d9198]">{{ promise.text }}</p>
+              class="rounded-[1.25rem] border border-white/8 bg-white/[0.03] p-4">
+              <p class="text-lg font-semibold tracking-[-0.03em] text-[#edf2f7]">{{ promise.title }}</p>
+              <p class="mt-2 text-sm leading-6 text-[#98a1af]">{{ promise.text }}</p>
             </div>
           </div>
         </article>
@@ -191,10 +199,24 @@ const navLinks = [
   { label: 'Log in', to: '/login' },
 ];
 
-const heroFacts = [
+const valuePoints = [
+  { title: 'Socials', text: 'Keep your artist bio link clean and current.' },
+  { title: 'Streaming links', text: 'Let fans choose where they listen.' },
+  { title: 'All-in-one link', text: 'Keep music platforms and socials together in one clean page.' },
+];
+
+const benefits = [
+  { title: 'Easy to use', text: 'Create your page in one click with your Spotify profile as the starting point.' },
+  { title: 'Always up to date', text: 'New releases show up first, without you rebuilding your site every time.' },
+  { title: 'Social media links', text: 'Give fans one reliable place to find your profiles and latest music.' },
+  { title: 'Multi-platform links', text: 'Give fans one destination with links to the streaming services they already use.' },
+];
+
+const promises = [
   { title: 'Fast setup', text: 'Connect Spotify and launch in minutes.' },
   { title: 'Always current', text: 'Latest releases stay at the top automatically.' },
-  { title: 'One clean link', text: 'Music, socials, and audience signals in one page.' },
+  { title: 'Professional by default', text: 'Your page looks consistent from the first publish, without a design project.' },
+  { title: 'Audience ready', text: 'Use one URL across social bios, campaigns, and release announcements.' },
 ];
 
 const previewPlatforms = [
@@ -205,31 +227,11 @@ const previewPlatforms = [
   { name: 'YouTube Music', icon: youtubeMusicIcon },
 ];
 
-const valuePoints = [
-  { title: 'Socials', text: 'Keep your artist bio link clean and current.' },
-  { title: 'Streaming links', text: 'Let fans choose where they listen.' },
-  { title: 'Artist links', text: 'Keep music platforms and socials together in one clean page.' },
-];
-
-const benefits = [
-  { title: 'Easy to use', text: 'Create your page in one click with your Spotify profile as the starting point.' },
-  { title: 'Always up to date', text: 'New releases show up first, without you rebuilding your site every time.' },
-  { title: 'Social media links', text: 'Give fans one reliable place to find your profiles and latest music.' },
-  { title: 'Multi-platform links', text: 'Give fans one destination with links to the streaming services they already use.' },
-];
-
 const socialPlatforms = [
   { name: 'Instagram', icon: instagramMonoIcon },
   { name: 'TikTok', icon: tiktokMonoIcon },
   { name: 'YouTube', icon: youtubeIcon },
   { name: 'Facebook', icon: facebookMonoIcon },
-];
-
-const promises = [
-  { title: 'Multi-platform links', text: 'Give every release one destination that routes fans to the service they already use.' },
-  { title: 'Professional by default', text: 'Your page looks consistent from the first publish, without a design project.' },
-  { title: 'Audience ready', text: 'Use one URL across social bios, campaigns, and release announcements.' },
-  { title: 'Less upkeep', text: 'Spend your time on music, not on manually maintaining a personal website.' },
 ];
 
 useHead({
